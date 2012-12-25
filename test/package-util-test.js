@@ -22,18 +22,18 @@
  * SOFTWARE.
  */
 
+const testCase = require('buster').testCase
+    , fs = require('fs')
+    , path = require('path')
+    , xregexp = require('xregexp')
+    , FilesystemError = require('errno').custom.FilesystemError
+    , packageUtil = require('../')
+    , JSONParseError = require('../lib/errors').JSONParseError
 
-var testCase = require('buster').testCase
-  , fs = require('fs')
-  , path = require('path')
-  , xregexp = require('xregexp')
-  , packageUtil = require('../../lib/package-util')
-  , FilesystemError = require('../../lib/errors').FilesystemError
-  , JSONParseError = require('../../lib/errors').JSONParseError
-
-  , setupReadPackageJSON = function (testPath, data, callback) {
+var setupReadPackageJSON = function (testPath, data) {
       var mock = this.mock(fs)
         , resolvedPath = path.resolve(testPath, 'package.json')
+
       mock.expects('readFile')
         .once()
         .withArgs(resolvedPath, 'utf-8')
@@ -41,6 +41,7 @@ var testCase = require('buster').testCase
     }
 
 testCase('Package util', {
+/*
     'findRootPackageName': {
         'test no root package': function (done) {
           packageUtil.findRootPackageName(
@@ -94,8 +95,8 @@ testCase('Package util', {
           )
         }
     }
-
-  , 'readPackageJSON': {
+*/
+    'readPackageJSON': {
         'test standard module read': function (done) {
           var expected = { some: 'package', json: 'data' }
 

@@ -1,5 +1,6 @@
-var testCase = require('buster').testCase
-  , PackageDescriptor = require('../../lib/package-descriptor')
+const testCase = require('buster').testCase
+    , PackageDescriptor = require('../lib/descriptor')
+
 testCase('PackageDescriptor', {
       'setUp': function () {
         this.runTest = function (json, key, expected, same) {
