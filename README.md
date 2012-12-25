@@ -1,6 +1,6 @@
 # Ender Package Util [![Build Status](https://secure.travis-ci.org/ender-js/ender-package-util.png)](http://travis-ci.org/ender-js/ender-package-util)
 
-A component of the Ender CLI, providing utilities for working with npm packages, including Ender-specific package.json files.
+A component of the [Ender CLI](https://github.com/ender-js/Ender/), providing utilities for working with npm packages, including Ender-specific package.json files.
 
 This package is used by the [ender-repository](https://github.com/ender-js/ender-repository) to provide an interface to npm for the Ender CLI.
 
