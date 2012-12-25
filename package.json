@@ -16,6 +16,7 @@
     }
   , "devDependencies": {
         "buster"      : "~0.6.12"
+      , "xregexp"     : "~2.0.0"
     }
   , "scripts": {
         "test"        : "./node_modules/.bin/buster-test"
