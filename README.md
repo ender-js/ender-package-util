@@ -6,7 +6,7 @@ This package is used by the [ender-repository](https://github.com/ender-js/ender
 
 ## About Ender
 
-For more information checkout [http://ender.jit.su](http://ender.jit.su)
+For more information check out [http://ender.jit.su](http://ender.jit.su)
 
 ## API
 
