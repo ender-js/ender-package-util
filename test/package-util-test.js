@@ -22,13 +22,15 @@
  * SOFTWARE.
  */
 
-const testCase = require('buster').testCase
-    , fs = require('fs')
-    , path = require('path')
-    , xregexp = require('xregexp')
-    , FilesystemError = require('errno').custom.FilesystemError
-    , packageUtil = require('../')
-    , JSONParseError = require('../lib/errors').JSONParseError
+var buster          = require('bustermove')
+  , assert          = require('referee').assert
+  , refute          = require('referee').refute
+  , fs              = require('fs')
+  , path            = require('path')
+  , xregexp         = require('xregexp')
+  , FilesystemError = require('errno').custom.FilesystemError
+  , packageUtil     = require('../')
+  , JSONParseError  = require('../lib/errors').JSONParseError
 
 var setupReadPackageJSON = function (testPath, data) {
       var mock = this.mock(fs)
@@ -40,7 +42,7 @@ var setupReadPackageJSON = function (testPath, data) {
         .callsArgWith(2, null, JSON.stringify(data))
     }
 
-testCase('Package util', {
+buster.testCase('Package util', {
 /*
     'findRootPackageName': {
         'test no root package': function (done) {
