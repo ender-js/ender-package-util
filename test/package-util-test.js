@@ -100,7 +100,7 @@ buster.testCase('Package util', {
 */
     'readPackageJSON': {
         'test standard module read': function (done) {
-          var expected = { some: 'package', json: 'data' }
+          var expected = {}
 
           setupReadPackageJSON.call(this, 'node_modules/amodule/', expected)
           packageUtil.readPackageJSON([], 'amodule', function (err, actual) {
@@ -112,7 +112,7 @@ buster.testCase('Package util', {
         }
 
       , 'test module with "." in name read': function (done) {
-          var expected = { some: 'package', json: 'data' }
+          var expected = {}
 
           setupReadPackageJSON.call(this, 'node_modules/amodule.js/', expected)
           packageUtil.readPackageJSON([], 'amodule.js', function (err, actual) {
@@ -124,7 +124,7 @@ buster.testCase('Package util', {
         }
 
       , 'test versioned module read': function (done) {
-          var expected = { some: 'package', json: 'data' }
+          var expected = {}
 
           setupReadPackageJSON.call(this, 'node_modules/amodule/', expected)
           packageUtil.readPackageJSON([], 'amodule@0.1.200', function (err, actual) {
@@ -136,7 +136,7 @@ buster.testCase('Package util', {
         }
 
       , 'test module with parent read': function (done) {
-          var expected = { some: 'package', json: 'data' }
+          var expected = {}
 
           setupReadPackageJSON.call(this, 'node_modules/aparent/node_modules/amodule/', expected)
           packageUtil.readPackageJSON([ 'aparent' ], 'amodule', function (err, actual) {
@@ -148,7 +148,7 @@ buster.testCase('Package util', {
         }
 
       , 'test module with multiple parents read': function (done) {
-          var expected = { some: 'package', json: 'data' }
+          var expected = {}
 
           setupReadPackageJSON.call(
               this
@@ -167,7 +167,7 @@ buster.testCase('Package util', {
         }
 
       , 'test "./" module read': function (done) {
-          var expected = { some: 'package', json: 'data' }
+          var expected = {}
 
           setupReadPackageJSON.call(this, '.', expected)
           packageUtil.readPackageJSON([ 'this shouldn\'t matter' ], './', function (err, actual) {
@@ -179,7 +179,7 @@ buster.testCase('Package util', {
         }
 
       , 'test relative path, no ".", module read': function (done) {
-          var expected = { some: 'package', json: 'data' }
+          var expected = {}
 
           setupReadPackageJSON.call(this, 'some/path/without/dots', expected)
           packageUtil.readPackageJSON([ 'foobar' ], 'some/path/without/dots', function (err, actual) {
@@ -191,7 +191,7 @@ buster.testCase('Package util', {
         }
 
       , 'test relative path with "." module read': function (done) {
-          var expected = { some: 'package', json: 'data' }
+          var expected = {}
 
           setupReadPackageJSON.call(this, 'some/path/without/dots', expected)
           packageUtil.readPackageJSON([ 'what???' ], './some/path/../path/without/dots', function (err, actual) {

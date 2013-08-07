@@ -46,14 +46,14 @@ buster.testCase('PackageDescriptor', {
         })
         refute.defined(packageDescriptor.ender)
       }
-    , 'test standard "ender" property': function () {
+    , 'test noop "ender" property': function () {
         this.runTest(
             {
                 name: 'foobar!'
               , ender: 'noop'
             }
           , 'ender'
-          , 'noop'
+          , null
         )
       }
     , 'test ender override "ender" property': function () {
