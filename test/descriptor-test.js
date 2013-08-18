@@ -56,13 +56,13 @@ buster.testCase('PackageDescriptor', {
           , null
         )
       }
-    , 'test ender override "ender" property': function () {
+    , 'test ender override "bridge" property': function () {
         this.runTest(
             {
                 name: 'foobar!'
               , ender: { bridge: 'yohoho' }
             }
-          , 'ender'
+          , 'bridge'
           , 'yohoho'
         )
       }
@@ -77,16 +77,6 @@ buster.testCase('PackageDescriptor', {
         this.runTest(
             { overlay: { ender: { name: 'yohoho' } } }
           , 'name'
-          , 'yohoho'
-        )
-      }
-    , 'test ender override "ender" property with "overlay->bridge"': function () {
-        this.runTest(
-            {
-                ender: 'foobar!'
-              , overlay: { ender: { bridge: 'yohoho' } }
-            }
-          , 'ender'
           , 'yohoho'
         )
       }
